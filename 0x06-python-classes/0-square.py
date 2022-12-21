@@ -3,4 +3,7 @@
 
 
 class Square:
+    """ a square class
+        Attributes: None
+    """
     pass

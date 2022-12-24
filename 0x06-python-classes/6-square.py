@@ -49,10 +49,10 @@ class Square:
         """
         if self.__size > 0:
             print("\n"*self.__position[1], end='')
-            pos = '_'*self.__position[0]
+            pos = ' '*self.__position[0]
             sq = "#"*self.__size
             print((pos+sq+"\n")*(self.__size-1), end='')
-            print('_'*self.__position[0]+"#"*self.__size)
+            print(' '*self.__position[0]+"#"*self.__size)
         else:
             print("")
 

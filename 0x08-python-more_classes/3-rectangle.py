@@ -65,4 +65,4 @@ class Rectangle:
             tri_ini = ((("#"*self.__width)+"\n")*(self.__height-1))
             return tri_ini + ("#"*self.__width)
         else:
-            print("")
+            return ""

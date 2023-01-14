@@ -21,11 +21,11 @@ class Rectangle(Base):
                y (int): position on the y axis
                id (int): the id of the object
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         self.x = x
         self.y = y
-        super.__init__(id)
+        super().__init__(id)
 
         @property
         def width(self):
@@ -33,7 +33,7 @@ class Rectangle(Base):
             return self.__width
 
         @width.setter
-        def width(self, width):
+        def width(self, value):
             """ set the value of the rectangle width"""
             if type(value) != int:
                 raise TypeError("width must be an integer")

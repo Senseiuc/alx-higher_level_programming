@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""a function that converts roman numeral to integer"""
+# 12-roman_to_int.py
 
 
 def roman_to_int(roman_string):
+    if (roman_string is None) or (type(roman_string) != str):
+        return 0
 
-    r_dict = {
+    result = 0
+    vals = {
         'I': 1,
         'V': 5,
         'X': 10,
@@ -14,16 +17,12 @@ def roman_to_int(roman_string):
         'M': 1000
     }
 
-    total = 0
-    if type(roman_string) != str or len(roman_string) == 0:
-        return 1
-    char = list(roman_string)
-    if (len(char) == 1):
-        return r_dict[char[0]]
-    for i in range(len(char)-1):
-        if r_dict[char[i]] < r_dict[char[i + 1]]:
-            total -= r_dict[char[i]]
+    limit = len(roman_string)
+    for ch in range(0, limit):
+        if ch == len(roman_string) - 1:
+            result += vals[roman_string[ch]]
+        elif vals[roman_string[ch]] >= vals[roman_string[ch + 1]]:
+            result += vals[roman_string[ch]]
         else:
-            total += r_dict[char[i]]
-    total += r_dict[char[-1]]
-    return total
+            result -= vals[roman_string[ch]]
+    return result

@@ -36,6 +36,8 @@ if __name__ == '__main__':
         })
 
         rows = cur.fetchall()
-
-    if rows is not None:
-        print(", ".join(list(set([row[1] for row in rows]))))
+        unique = []
+        for i in rows:
+            if i[1] not in unique:
+                unique.append(i[1])
+        print(", ".join(unique))

@@ -22,5 +22,6 @@ if __name__ == "__main__":
 
     session = Session()
 
-    instance = session.query(State).first();
-    print('{0}: {1}'.format(instance.id, instance.name))
+    instance = session.query(State).first()
+    if instance:
+        print('{0}: {1}'.format(instance.id, instance.name))

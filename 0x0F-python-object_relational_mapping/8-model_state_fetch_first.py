@@ -25,3 +25,5 @@ if __name__ == "__main__":
     instance = session.query(State).first()
     if instance:
         print('{0}: {1}'.format(instance.id, instance.name))
+    else:
+        print('Nothing')

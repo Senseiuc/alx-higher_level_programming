@@ -13,8 +13,8 @@ if __name__ == "__main__":
     else:
         q = ''
     value = {'q': q}
-    r = requests.post(url, value).json()
     try:
+        r = requests.post(url, value).json()
         if 'id' in r and 'name' in r:
             print("[{}] {}".format(r['id'], r['name']))
         else:
